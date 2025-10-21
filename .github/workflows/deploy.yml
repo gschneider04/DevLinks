@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  deploy_on_GithubPages:
     runs-on: ubuntu-latest
     permissions:
       contents: write
