@@ -6,7 +6,7 @@
 
 :root{
     --text-color: white;
-    --background-url: url(/src/assets/bg-mobile.jpg);
+    --background-url: url(../assets/bg-mobile.jpg);
     --footer-text: rgba(255, 255, 255, 0.5);
 
     --button-background-color:rgba(255, 255, 255, 0.1);
@@ -18,7 +18,7 @@
 
 .light-mode {
     --text-color: black;
-    --background-url: url(/src/assets/bg-mobile-light.png);
+    --background-url: url(../assets/bg-mobile-light.png);
     --footer-text: rgb(127, 138, 31, 0.8);
 
     --button-background-color: rgba(0, 0, 0, 0.1);
@@ -39,10 +39,12 @@ body {
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    height: 100vh;  /* Garante que o body ocupe toda a altura da viewport */
 }
 
 #container {
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
     margin: 56px auto 0px;
     padding: 0 24px;
 }
