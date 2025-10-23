@@ -103,8 +103,8 @@ body {
     transform: translateY(-50%);
 
     cursor: pointer;
-
-    animation: toogle-switch-back 0.4s;
+    transition: outline 0.2s;
+    animation: toggle-switch-back 0.4s;
 }
 
 #switch-mode span{
@@ -122,7 +122,7 @@ body {
 }
 
 .light-mode #switch-mode button{
-    animation: toogle-switch 0.4s forwards;
+    animation: toggle-switch 0.4s forwards;
 }
 
 #switch-mode button:hover{
@@ -231,7 +231,7 @@ footer a:hover{
 }
 
 /* Criando animações */
-@keyframes toogle-switch {
+@keyframes toggle-switch {
     from{
         left: 0;
     }
@@ -240,7 +240,7 @@ footer a:hover{
     }
 }
 
-@keyframes toogle-switch-back {
+@keyframes toggle-switch-back {
     from{
         left: 50%;
     }

@@ -1,6 +1,6 @@
 
 
-function toogleMode(){
+function toggleMode(){
     const html = document.documentElement
 
     // FAZENDO UMA VERIFICAÇÃO COM CONDICIONAL PARA REMOVER O LIGHT-MODE E ADICIONAR POSTERIORMENTE 
