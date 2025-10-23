@@ -103,6 +103,8 @@ body {
     transform: translateY(-50%);
 
     cursor: pointer;
+
+    animation: toogle-switch-back 0.4s;
 }
 
 #switch-mode span{
@@ -120,8 +122,11 @@ body {
 }
 
 .light-mode #switch-mode button{
-    right: 0;
-    left: initial;
+    animation: toogle-switch 0.4s forwards;
+}
+
+#switch-mode button:hover{
+    outline: 8px solid var(--media-links-hover);
 }
 
 /* Links Session */
@@ -222,5 +227,24 @@ footer a:hover{
 
     .light-mode{
         --background-url: url(../assets/bg-desktop-light.jpg);
+    }
+}
+
+/* Criando animações */
+@keyframes toogle-switch {
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%
+    }
+}
+
+@keyframes toogle-switch-back {
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
     }
 }
