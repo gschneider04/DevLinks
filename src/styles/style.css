@@ -1,0 +1,250 @@
+/* Reset the style of page */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Create a default style for dark or light mode */
+:root{
+    --text-color: white;
+    --background-url: url(../assets/bg-mobile.jpg);
+    --footer-text: rgba(255, 255, 255, 0.5);
+
+    --button-background-color:rgba(255, 255, 255, 0.1);
+    --button-border-color:rgba(255, 255, 255, 0.5);
+
+    --button-background-color-hover: rgba(255, 255, 255, 0.05);
+    --media-links-hover: rgba(255, 255, 255, 0.2);
+
+    --switch-background-image-mode: url(../assets/moon-switch.svg);
+
+}
+
+.light-mode {
+    --text-color: black;
+    --background-url: url(../assets/bg-mobile-light.png);
+    --footer-text: rgb(127, 138, 31, 0.8);
+
+    --button-background-color: rgba(0, 0, 0, 0.1);
+    --button-border-color:rgba(0, 0, 0, 0.5);
+
+    --button-background-color-hover: rgba(0, 0, 0, 0.05);
+    --media-links-hover: rgba(0, 0, 0, 0.2);
+
+    --switch-background-image-mode: url(../assets/sun-switch.svg);
+}
+
+/* Application skeleton style  */
+
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    background-image: var(--background-url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;  /* Garante que o body ocupe toda a altura da viewport */
+}
+
+#container {
+    width: 100%;
+    max-width: 528px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+/* Profile Session */
+
+#profile{
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px;
+}
+
+#profile p {
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* Switch Session*/
+
+#switch-mode {
+    margin: 4px auto;
+    
+    position: relative;
+    width: 64px;
+}
+
+#switch-mode button{
+    width: 32px;
+    height: 32px;
+
+    background: white;
+    border: none;
+    border-radius: 50%;
+    background-image: var(--switch-background-image-mode);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+
+    transform: translateY(-50%);
+
+    cursor: pointer;
+    transition: outline 0.2s;
+    animation: toggle-switch-back 0.4s;
+}
+
+#switch-mode span{
+    display: block;
+
+    width: 64px;
+    height: 24px;
+
+    background: var(--button-background-color);
+    border: 1px solid var(--button-border-color);
+    border-radius: 90px;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.light-mode #switch-mode button{
+    animation: toggle-switch 0.4s forwards;
+}
+
+#switch-mode button:hover{
+    outline: 8px solid var(--media-links-hover);
+}
+
+/* Links Session */
+
+ul {
+    list-style: none;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 24px 0;
+}
+
+
+ul li a{
+    text-decoration: none;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+
+    padding: 16px 24px;    
+
+    background-color: var(--button-background-color);
+    border: 1px solid var(--button-border-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    transition: background 0.2s;
+}
+
+ul li a:hover {
+    background-color: var(--button-background-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/* Icons of Media Session */
+
+#media-icons {
+    display: flex;
+    justify-content: center;
+
+    gap: 16px;
+    padding: 24px 0;    
+    
+    font-size: 24px;
+}
+
+#media-icons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 50%; 
+    padding: 16px;
+
+    transition: background 0.2s;
+}
+
+#media-icons a:hover {
+    background-color: var(--media-links-hover);
+}
+
+/*  Footer Session */
+
+footer{
+    padding: 24px 0;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--footer-text);
+    font-size: 14px;
+
+    padding: 5px;
+    border-radius: 15px;
+
+    transition: background 0.2s;
+}
+
+footer a:hover{
+    background-color: var(--media-links-hover);
+    text-decoration: underline;
+
+}
+
+/* Adicionando media queries para deixar responsivo em telas menores */
+
+@media (min-width: 700px) {
+    :root{
+        --background-url: url(../assets/bg-desktop.jpg);
+    }
+
+    .light-mode{
+        --background-url: url(../assets/bg-desktop-light.jpg);
+    }
+}
+
+/* Criando animações */
+@keyframes toggle-switch {
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%
+    }
+}
+
+@keyframes toggle-switch-back {
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+    }
+}
