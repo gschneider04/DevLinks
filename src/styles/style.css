@@ -53,7 +53,7 @@ body {
 
 #container {
     width: 100%;
-    max-width: 360px;
+    max-width: 528px;
     margin: 56px auto 0px;
     padding: 0 24px;
 }
@@ -211,4 +211,16 @@ footer a:hover{
     background-color: var(--media-links-hover);
     text-decoration: underline;
 
+}
+
+/* Adicionando media queries para deixar responsivo em telas menores */
+
+@media (min-width: 700px) {
+    :root{
+        --background-url: url(../assets/bg-desktop.jpg);
+    }
+
+    .light-mode{
+        --background-url: url(../assets/bg-desktop-light.jpg);
+    }
 }
